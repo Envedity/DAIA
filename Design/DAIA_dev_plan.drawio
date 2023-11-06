@@ -1,0 +1,70 @@
+<mxfile host="Electron" modified="2023-11-06T19:03:58.062Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="OUJGgRdJZjGfy41e4PCP" version="21.6.5" type="device">
+  <diagram name="Page-1" id="gWzL2GTMoUoIFvpRtcWf">
+    <mxGraphModel dx="1430" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6EDF7aMCRnxr70zaofOc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-9" target="bizEwBFf6lZEpzVgn9bI-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-9" value="Prepare (start re-designing a better DAIA blueprint more inspired by AutoGPT) for the new GPT with Vision API from the OpenAI event" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="240" y="530" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-11" target="bizEwBFf6lZEpzVgn9bI-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-11" value="Develop the DAIA using the new APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
+          <mxGeometry x="40" y="535" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-13" target="bizEwBFf6lZEpzVgn9bI-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-13" value="First mini demo for DAIA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
+          <mxGeometry x="40" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-15" target="bizEwBFf6lZEpzVgn9bI-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-15" value="Improve the DAIA and add more features (Memory, Auto-evaluation(self fixing)...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
+          <mxGeometry x="240" y="400" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.03;entryY=0.509;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-17" target="bizEwBFf6lZEpzVgn9bI-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-17" target="bizEwBFf6lZEpzVgn9bI-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-17" value="Test the new DAIA version with a new demo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
+          <mxGeometry x="245" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.42;entryY=0.994;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-19" target="bizEwBFf6lZEpzVgn9bI-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-19" value="Add super capabilities to the DAIA (self-optimization, auto agent duplication, auto networking capabilities)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
+          <mxGeometry x="20" y="290" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.003;entryY=0.316;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="bizEwBFf6lZEpzVgn9bI-21" target="bizEwBFf6lZEpzVgn9bI-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-21" value="Test the DAIA on a much larger scale (privetly), and on a new demo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
+          <mxGeometry x="40" y="160" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-25" value="We can use the DAIA for our own purposes and or make it as a open-source project, or make it as a commercial product" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
+          <mxGeometry x="235" y="160" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-26" value="&lt;h1&gt;The development plan of the DAIA&lt;/h1&gt;&lt;div&gt;DAIA - Digital Artificial Intellignece Agent&lt;/div&gt;&lt;div&gt;DVAI - Digital Vision Artificial Intellignece&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="bizEwBFf6lZEpzVgn9bI-27" value="1." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="230" y="510" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6EDF7aMCRnxr70zaofOc-9" value="OR" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="180" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UKyjrCsGz-pgtKZ8FkDC-1" value="&lt;font color=&quot;#33ffff&quot; style=&quot;font-size: 20px;&quot;&gt;Let&#39;s Build the Future of Powerful AGI and Beyond together!&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="50" width="340" height="57.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
