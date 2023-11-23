@@ -1,5 +1,4 @@
 openai
 python-dotenv
 sqlalchemy
-tiktoken
 black

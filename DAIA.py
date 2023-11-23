@@ -1,9 +1,8 @@
-import asyncio
-#from 
+from DAIA_GPT4V.run import run
 from config import openai_api_key
 
 
-async def main(key: str = None) -> None:
+def main(key: str = None) -> None:
     # Checking API Key
     if not key or len(key) <= 0 or key == "":
         input_api_key = ""
@@ -21,7 +20,9 @@ async def main(key: str = None) -> None:
     # User Interaction
     try:
         option = int(
-            input("\nOptions\n[1] DAIA_GoalTimed\n[2] DAIA_Constant\n\nSelect Option: ")
+            input(
+                "\nOptions\n[1] DAIA_GPT-4-with-Vision\n[2] DAIA_Continues\n\nSelect Option: "
+            )
         )
 
     except ValueError:
@@ -30,7 +31,7 @@ async def main(key: str = None) -> None:
 
     match option:
         case 1:
-            return await run(api_key=key)
+            return run(api_key=key)
 
         case 2:
             return print("Currently Unavaiable.")
@@ -40,4 +41,4 @@ async def main(key: str = None) -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main(openai_api_key))
+    main(openai_api_key)
