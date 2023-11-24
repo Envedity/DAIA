@@ -64,7 +64,7 @@ Please state what is in the provided screenshot of the {str(system_info.get('OS'
 
     def action_compleation():
         pass
-        # Compleate a action
+        # Compleate an action
 
     def action(
         self,
@@ -130,7 +130,7 @@ If the suggestion is not specific enough, please state "Not specific"
         """
         Explain a suggestion.
 
-        Suggestion (Create a account) -> explanation (To create a account do...)
+        Suggestion (Create an account) -> explanation (To create an account do...)
         """
 
         # Remmember and the previous data for the prompt with this prompt
@@ -173,7 +173,7 @@ What would that question be? (respond only with the question)
         question = question.choices[0].message.content
         self.save_action(action1=prompt, action2=question, category=0)
 
-        # Make GPT answer its question to generate a explanation
+        # Make GPT answer its question to generate an explanation
         suggestion_suggestions = self.client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -197,13 +197,13 @@ What would that question be? (respond only with the question)
         """
         Split a suggestion (or step) into its sub-suggestions (or steps).
 
-        Suggestion (Create a account) -> Suggestions (['Visit the website..', 'Create account...', 'Access services..'])
+        Suggestion (Create an account) -> Suggestions (['Visit the website..', 'Create account...', 'Access services..'])
         """
 
         # Explain the suggestion
         explanation = self.suggestion_explainer(suggestion)
 
-        # Remmember the important previous data for the prompt
+        # Rememember the important previous data for the prompt
         previous_data = self.short_remember(
             f"""
 What are the suggestions in the response based on the given response and previous data?
@@ -257,7 +257,7 @@ Additional suggestions based on the provided response and previous data...
         sub_suggestions = sub_suggestions.choices[0].message.content
         self.save_action(action1=prompt, action2=sub_suggestions, category=0)
 
-        # Check if the response gives any suggestions and if it is a answer
+        # Check if the response gives any suggestions and if it is an answer
         if sub_suggestions[0:5].lower() in "reject":
             print(
                 f"""
@@ -277,13 +277,13 @@ General '{suggestion}' steps:
 
     def explanation_to_suggestions(self, explanation: str, prev_data: bool):
         """
-        Split a explanation into suggestions
+        Split an explanation into suggestions
 
-        Explanation (To create a account do..) -> Suggestions (['Visit the website..', 'Create account...', 'Access services..'])
+        Explanation (To create an account do..) -> Suggestions (['Visit the website..', 'Create account...', 'Access services..'])
         """
 
         if prev_data:
-            # Remmember the important previous data for the prompt
+            # Rememember the important previous data for the prompt
             previous_data = self.short_remember(
                 f"""
 What are the suggestions in the response based on the given response and previous data?
@@ -338,7 +338,7 @@ Additional suggestions based on the provided response and previous data...
             suggestions = suggestions.choices[0].message.content
             self.save_action(action1=prompt, action2=suggestions, category=0)
 
-            # Check if the response gives any suggestions and if it is a answer
+            # Check if the response gives any suggestions and if it is an answer
             if suggestions[0:5].lower() in "reject":
                 print(
                     f"""
@@ -388,7 +388,7 @@ Additional suggestions based on the provided response...
             suggestions = suggestions.choices[0].message.content
             self.save_action(action1=prompt, action2=suggestions, category=0)
 
-            # Check if the response gives any suggestions and if it is a answer
+            # Check if the response gives any suggestions and if it is an answer
             if suggestions[0:5].lower() in "reject":
                 print(
                     f"""
@@ -409,7 +409,7 @@ General '{explanation}' steps:
 
     def short_remember(self, need: str):
         """
-        Remmember a short period of history in detail from the DAIA MemoryDB,
+        Remember a short period of history in detail from the DAIA MemoryDB,
         and extract the most important data out of the history for the current need prompt
 
         In the need prompt, you must place a '>>previous data missing<<' string where you want the GPT to input the previous data
@@ -419,7 +419,7 @@ General '{explanation}' steps:
 
         memory = Memory()
 
-        # Get and format all of the previous action with the limit of 100
+        # Get and format all of the previous action with a limit of 100
         previous_important_data = ""
         for action in memory.get_ordered_actions_of_goal(self.goal_id, 100):
             previous_important_data = previous_important_data + "".join(
@@ -428,7 +428,7 @@ General '{explanation}' steps:
 
         # If there is no history yet
         if len(previous_important_data) <= 0:
-            return "Nothing has hppened yet."
+            return "Nothing has happened yet."
 
         # The main prompt
         previous_data = self.client.chat.completions.create(
@@ -530,7 +530,7 @@ Provide a concise title (<75 chars) describing the {item_category}.
 
     def save_action(self, action1: str, action2: str, category: int):
         """
-        Save a action under its category. (The action is made out of 2 actions)
+        Save an action under its category. (The action is made out of 2 actions)
 
         Category/action types:
         "question=>response" = int 0

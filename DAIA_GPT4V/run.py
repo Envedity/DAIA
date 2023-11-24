@@ -10,7 +10,7 @@ def run(api_key):
         print("Goal is empty!")
         goal = input("Please enter your goal for the DAIA here: ")
 
-    # Save the goal and get its id (goal_id=anything, -1 is just a example, as this is changed at line 18 by using another Think class inctance)
+    # Save the goal and get its id (goal_id=anything, -1 is just an example, as this is changed at line 18 by using another Think class instance)
     think_ = Think(key=api_key, goal=goal, goal_id=-1)
     goal_id = think_.save_goal()
 
@@ -18,7 +18,7 @@ def run(api_key):
     think = Think(key=api_key, goal=goal, goal_id=goal_id)
     think.save_goal_in_goal()
 
-    # Loop for getting a question for goal compleation, that the user agrees with
+    # Loop for getting a question for goal completion, that the user agrees with
     while True:
         prompt = f"""
 You have a goal you want to achieve. 
@@ -86,7 +86,7 @@ General goal steps:
             if second_time:
                 if agree.upper() == "N":
                     think.save_action(
-                        action1=f'"Sorry, but I dissagree with the current suggestions because: \n{explanation}\nCan you update the suggestions?"',
+                        action1=f'"Sorry, but I disagree with the current suggestions because: \n{explanation}\nCan you update the suggestions?"',
                         action2=f'"Yes, here are the new suggestions: \n{suggestions}"',
                         category=0,
                     )
@@ -122,7 +122,7 @@ General goal steps:
 
                 else:
                     think.save_action(
-                        action1=f'"Sorry, but I dissagree with the current suggestions because: \n{explanation}\nCan you update the suggestions?"',
+                        action1=f'"Sorry, but I disagree with the current suggestions because: \n{explanation}\nCan you update the suggestions?"',
                         action2=f'"Yes, here are the new suggestions: \n{suggestions}"',
                         category=0,
                     )

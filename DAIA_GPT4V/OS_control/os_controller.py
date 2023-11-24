@@ -4,7 +4,7 @@ import platform
 
 class OSController:
     """
-    Controll the OS using pyautogui, and get its data with the platform library
+    Control the OS using pyautogui, and get its data with the platform library
     """
 
     def __init__(self):
