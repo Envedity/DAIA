@@ -58,7 +58,7 @@ Once installed, you can start using DAIA by launching the application and initia
 
 We welcome contributions from the DAIA community to help improve and expand the capabilities of our AI agent. It is still in its early development stage so there is a lot to be done and we urgently need your support in this effort. Here's how you can contribute:
 
-- **Join Our Discord Server**: If you're a developer or someone who is interested in contributing, please join our Discord server The Envedity Network at: https://discord.gg/Xrf8bjXMU6, there you can become a developer and will be able to directly contribute to the main DAIA repo with us, as well as share your feedback, suggestions, and bug reports with us and more.. Your insights are valuable in shaping the future of DAIA
+- **Join Our Discord Server**: If you're a developer or someone who is interested in contributing, please join our Discord server The Envedity Network at: https://discord.gg/V4T6QFUw9c, there you can become a developer and will be able to directly contribute to the main DAIA repo with us, as well as share your feedback, suggestions, and bug reports with us and more.. Your insights are valuable in shaping the future of DAIA
 
 Here is what we have already done from the blueprint:
 ![Here is what we have already done from the blueprint:](Design/DAIA%20(GPT%20Vision)%20progress.png)
