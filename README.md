@@ -67,7 +67,7 @@ Here is what we have already done from the blueprint:
 
 - **Share**: Share the DAIA project with others you know to spread the word (DAIA repo link: https://github.com/Envedity/DAIA)
 
-- **Support (Sponsor the project)**: You can sponsor us through this e-mail: envedity@gmail.com or donate/support us at https://www.patreon.com/user?u=108155871
+- **Support (Sponsor the project)**: You can sponsor us through this e-mail: envedity@gmail.com or donate/support us at https://patreon.com/user?u=108155871&utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link
 
 We appreciate your support in making DAIA even better for all users! 🙏
 
