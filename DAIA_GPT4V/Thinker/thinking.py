@@ -10,6 +10,9 @@
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from DAIA_GPT4V.Memory.memory import Memory
 from DAIA_GPT4V.OS_control.os_controller import OSController
@@ -35,9 +38,9 @@ class Think:
         )
 
     def goal_completer(self, suggestions: str):
-        ''''
+        """'
         Compleate goals
-        '''
+        """
 
         setup()
 
@@ -583,8 +586,7 @@ And the input data:
 Please use the provided context to extract and present the most important data from the input.
 """,
         )
-        important_data = self.get_important_data(
-            full_data, previous_important_data)
+        important_data = self.get_important_data(full_data, previous_important_data)
 
         # Save the action
         new_action = memory.create_action_object(
