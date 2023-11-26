@@ -75,6 +75,6 @@ Let's build the future of AGI Together!
 
 ## 5. License 📄
 
-DAIA is under the Creative Commons license.
+DAIA is under the GNU Version 3 licence (https://fsf.org/).
 
 For the most up-to-date information, visit [DAIA's official website](https://envedity.github.io/). 🌐🚀

@@ -5,4 +5,7 @@ venv/
 
 __pycache__/
 
+Screenshots
+
 goalsInfo.db
+MemoryDB.db

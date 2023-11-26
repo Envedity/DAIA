@@ -35,6 +35,10 @@ class Think:
         )
 
     def goal_completer(self, suggestions: str):
+        ''''
+        Compleate goals
+        '''
+
         setup()
 
         # Setup system info and commands
@@ -579,7 +583,8 @@ And the input data:
 Please use the provided context to extract and present the most important data from the input.
 """,
         )
-        important_data = self.get_important_data(full_data, previous_important_data)
+        important_data = self.get_important_data(
+            full_data, previous_important_data)
 
         # Save the action
         new_action = memory.create_action_object(
