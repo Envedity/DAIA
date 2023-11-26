@@ -20,11 +20,13 @@ The main difference with the DAIA compared to other AI Agents is that it interac
 Furthermore, the DAIA will be built with a built-in memory, self-evaluating and optimizing system from the start.
 
 Here is our current blueprint for the DAIA and its features:
-![Here is our current blueprint for the DAIA and its features:](Design/DAIA%20(GPT%20Vision).png)
+![DAIA_blueprint](Design/DAIA%20(GPT%20Vision).png)
 
 ## 2. Features 🌟
 
 - **Intelligent Interaction**: DAIA can interact with your PC using natural language, making it easy to communicate your needs. (in progress)
+
+- **Goal Completion**: Automate and complete goals (in progress)
 
 - **Task Automation**: Automate repetitive tasks and processes, saving time and effort. (in progress)
 
@@ -38,21 +40,19 @@ Here is our current blueprint for the DAIA and its features:
     
 - **Security**: Ensure your data and interactions are secure with robust encryption and privacy measures. (not done yet)
 
-- **Endless Scalability**: DAIA can make multiple copies of itself and create its own network of DAIAs provided the computing power (in progress)
+- **Endless Scalability**: DAIA can make multiple copies of itself and create its own network of DAIAs provided the computing power. (in progress)
 
-- **Automation of Big Goals**: DAIA can automate big goals with its capability to make multiple versions of itself, therefore making the process faster (in progress)
+- **Automation of Big Goals**: DAIA can automate big goals with its capability to make multiple versions of itself, therefore making the process faster. (in progress)
 
 ## 3. Usage 🤝
 
-Once installed, you can start using DAIA by launching the application and initiating conversations or goals. Here are some common usage scenarios:
-
-- **Goal Completion**: Automate and complete goals (in progress)
-
-- **Task Automation**: Create and schedule automated tasks to streamline your workflow. (not done yet)
-
-- **Information Retrieval**: Ask DAIA for information, news, or data from the web. (in progress)
-
-- **Scripting and Customization**: Extend DAIA's capabilities by writing custom scripts or plugins. ((not done yet))
+1. Install the DAIA by running `git clone https://github.com/Envedity/DAIA.git` in your desired path, or by downloading and extracting the zip file.
+2. Make a python 3.11 env using the `requirements.txt` file.
+3. Run the DAIA.py file by typing `python DAIA.py` in the DAIA directory.
+4. Choose a version of the DAIA you want to use.
+5. Give it a goal.
+6. Let it know if you agree with what it suggests for goal compleation.
+7. Sit back and let the DAIA compleate your goal all by itself
 
 ## 4. Contribution 🙌
 
@@ -61,7 +61,7 @@ We welcome contributions from the DAIA community to help improve and expand the 
 - **Join Our Discord Server**: If you're a developer or someone who is interested in contributing, please join our Discord server The Envedity Network at: https://discord.gg/Xrf8bjXMU6, there you can become a developer and will be able to directly contribute to the main DAIA repo with us, as well as share your feedback, suggestions, and bug reports with us and more.. Your insights are valuable in shaping the future of DAIA
 
 Here is what we have already done from the blueprint:
-![Here is what we have already done from the blueprint:](Design/DAIA%20(GPT%20Vision)%20progress.png)
+![progress_made_on_DAIA_blueprint](Design/DAIA%20(GPT%20Vision)%20progress.png)
 
 - **Feedback**: Share your feedback, suggestions, and bug reports with us. You can do this by [opening an issue](https://github.com/Envedity/DAIA/issues) on our feedback repository or in our Discord server.
 
