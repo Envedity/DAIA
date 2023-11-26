@@ -58,7 +58,7 @@ Here is our current blueprint for the DAIA and its features:
 
 We welcome contributions from the DAIA community to help improve and expand the capabilities of our AI agent. It is still in its early development stage so there is a lot to be done and we urgently need your support in this effort. Here's how you can contribute:
 
-- **Join Our Discord Server**: If you're a developer or someone who is interested in contributing, please join our Discord server The Envedity Network at: https://discord.gg/Xrf8bjXMU6, there you can become a developer and will be able to directly contribute to the main DAIA repo with us, as well as share your feedback, suggestions, and bug reports with us and more.. Your insights are valuable in shaping the future of DAIA
+- **Join Our Discord Server**: If you're a developer or someone who is interested in contributing, please join our Discord server The Envedity Network at: https://discord.gg/V4T6QFUw9c, there you can become a developer and will be able to directly contribute to the main DAIA repo with us, as well as share your feedback, suggestions, and bug reports with us and more.. Your insights are valuable in shaping the future of DAIA
 
 Here is what we have already done from the blueprint:
 ![progress_made_on_DAIA_blueprint](Design/DAIA%20(GPT%20Vision)%20progress.png)
@@ -67,7 +67,7 @@ Here is what we have already done from the blueprint:
 
 - **Share**: Share the DAIA project with others you know to spread the word (DAIA repo link: https://github.com/Envedity/DAIA)
 
-- **Support (Sponsor the project)**: You can sponsor us through this e-mail: envedity@gmail.com or donate/support us at https://www.patreon.com/user?u=108155871
+- **Support (Sponsor the project)**: You can sponsor us through this e-mail: envedity@gmail.com or donate/support us at https://patreon.com/user?u=108155871&utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link
 
 We appreciate your support in making DAIA even better for all users! 🙏
 
