@@ -13,15 +13,18 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
+import orjson
+
+from openai import OpenAI
+from pathlib import Path
+from random import randint
 
 from DAIA_GPT4V.Memory.memory import Memory
 from DAIA_GPT4V.OS_control.os_controller import OSController
 from DAIA_GPT4V.DVAI.GPT_4_with_Vision import DVAI
 from utils.setup import setup
-from openai import OpenAI
-from pathlib import Path
-from random import randint
 
+from .. import prompts
 
 class Think:
     """
@@ -64,9 +67,9 @@ class Think:
             os_controller.screenshot(screenshot_savepath)
 
             # Get the current screen information with the screenshot (the prompt needs improvements)
-            prompt = f"""
-Please state what is in the provided screenshot of the {str(system_info.get('OS'))} OS that relates to {suggestion} of the goal {self.goal}.
-"""
+            prompt = prompts.IS_SCREENSHOT_RELEVANT_TO_GOAL.format(
+                os_name=system_info.get("OS"), goal=self.goal
+            )
             screenshot_description = dvai.gpt_with_vision_by_base64(
                 screenshot_savepath, prompt
             )
@@ -111,40 +114,26 @@ Please state what is in the provided screenshot of the {str(system_info.get('OS'
             messages=[
                 {
                     "role": "user",
-                    "content": f"""
-Can you determine if the provided suggestion, along with the given commands and current screen data, is specific enough to be executed on the {os} OS? Please provide the commands with thair expected outcome to complete the suggestion if it is possible. Consider the following information:
-
-Given commands:
-{str_commands}
-
-Previous data:
-{previous_data}
-
-Current screen information:
-{screen_data}
-
-Suggestion:
-{suggestion}
-
-If the suggestion is sufficiently specific and can be carried out on the {os} OS using the provided commands, please type the commands along with thair expected outcomes, like this:
-1. command[perameter of command or none] (expected outcome)
-2. command[perameter of command or none] (expected outcome)
-3. command[perameter of command or none] (expected outcome)
-Additional commands with outcomes...
-
-If the suggestion is not specific enough, please state "Not specific"
-""",
+                    "content": prompts.LIST_COMMANDS_FOR_SUGGESTION.format(
+                        os_name=os,
+                        str_commands=str_commands,
+                        previous_data=previous_data,
+                        screen_data=screen_data,
+                        suggestion=suggestion,
+                    ),
+                    
                 }
             ],
+            response_format={"type": "json"}
         )
         executable = executable.choices[0].message.content
-
+        executable = orjson.loads(executable)
         # Check if the response returns commands or just 'Not specific'
-        if executable == "Not specific" or executable == '"Not specific"':
-            return False
-
+        if executable.get("status") == "impossible":
+            return "Not specific"
         else:
-            return executable
+            #TODO: Make this clean, changing where the function is called than making some string manipulation magic here
+            return "\n".join([f"{i}. {command.get('command')} {command.get('parameter')} ({command.get('expected_outcome')})" for i, command in enumerate(executable.get("commands"))])
 
     def suggestion_explainer(self, suggestion: str):
         """
