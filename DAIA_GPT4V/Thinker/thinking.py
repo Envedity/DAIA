@@ -26,6 +26,7 @@ from utils.setup import setup
 
 from .. import prompts
 
+
 class Think:
     """
     The main class for operations involving the GPT for the DAIA
@@ -121,10 +122,9 @@ class Think:
                         screen_data=screen_data,
                         suggestion=suggestion,
                     ),
-                    
                 }
             ],
-            response_format={"type": "json"}
+            response_format={"type": "json"},
         )
         executable = executable.choices[0].message.content
         executable = orjson.loads(executable)
@@ -132,8 +132,13 @@ class Think:
         if executable.get("status") == "impossible":
             return "Not specific"
         else:
-            #TODO: Make this clean, changing where the function is called than making some string manipulation magic here
-            return "\n".join([f"{i}. {command.get('command')} {command.get('parameter')} ({command.get('expected_outcome')})" for i, command in enumerate(executable.get("commands"))])
+            # TODO: Make this clean, changing where the function is called than making some string manipulation magic here
+            return "\n".join(
+                [
+                    f"{i}. {command.get('command')} {command.get('parameter')} ({command.get('expected_outcome')})"
+                    for i, command in enumerate(executable.get("commands"))
+                ]
+            )
 
     def suggestion_explainer(self, suggestion: str):
         """

@@ -18,6 +18,7 @@ from DAIA_GPT4V.Thinker.thinking import Think
 from openai import OpenAI
 from . import prompts
 
+
 def run(api_key):
     goal = input("Please enter your goal for the DAIA here: ")
 
@@ -86,7 +87,7 @@ General goal steps:
         while True:
             print(
                 "(Press ENTER to skip) WARNING: if you skip, the suggestions will be accepted. This is the LAST MANUAL step, everything from here on is automated"
-            ) # TODO: Use ANSI escape codes to make this text red
+            )  # TODO: Use ANSI escape codes to make this text red
             agree = input(
                 "Do you agree with the current suggestions/processes for your goal? (Y/N)"
             )
