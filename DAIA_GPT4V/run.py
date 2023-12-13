@@ -16,7 +16,7 @@
 
 from DAIA_GPT4V.Thinker.thinking import Think
 from openai import OpenAI
-
+from . import prompts
 
 def run(api_key):
     goal = input("Please enter your goal for the DAIA here: ")
@@ -36,14 +36,7 @@ def run(api_key):
 
     # Loop for getting a question for goal completion, that the user agrees with
     while True:
-        prompt = f"""
-You have a goal you want to achieve. 
-As your first step you want to know how to achieve your goal. So you must ask someone a question that will give you that information. 
-
-your goal = {goal}
-
-What would that question be? (respond only with the question)
-"""
+        prompt = prompts.QUESTION.format(goal=goal)
 
         # Set the OpenAI client
         client = OpenAI(
@@ -93,7 +86,7 @@ General goal steps:
         while True:
             print(
                 "(Press ENTER to skip) WARNING: if you skip, the suggestions will be accepted. This is the LAST MANUAL step, everything from here on is automated"
-            )
+            ) # TODO: Use ANSI escape codes to make this text red
             agree = input(
                 "Do you agree with the current suggestions/processes for your goal? (Y/N)"
             )
