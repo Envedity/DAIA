@@ -48,13 +48,13 @@ Furthermore, the DAIA will be built with a built-in memory, self-evaluating and 
 
 ## 4. Versions ✨️
 
-#### DAIA-PreProgrammed
+### DAIA-PreProgrammed
 This version of DAIA is pre-programmed with a set of prompts and processes that it will follow in its programmed order. Therefore this version is much more complex.
 
 Here is our current blueprint for the pre-programmed DAIA and its features:
 ![DAIA_preprogrammed_blueprint](Versions/DAIA_GPT4V_PreProgrammed/Design/DAIA%20(GPT%20Vision).png)
 
-#### DAIA-FreeThink
+### DAIA-FreeThink
 This version of DAIA is much more free to complete the goals you give it in its own way, kind of like ChatGPT, but if it had vision and the ability to interact with your computer. Therefore it is much simpler in its design however, it can still scale if possible. (memory, optimization and a functional vision system coming soon)
 
 Here is our current blueprint for the free think DAIA and its features:
