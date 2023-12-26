@@ -1,4 +1,4 @@
-#    DAIA -  Digital Artificial Inteligence Agent
+#    DAIA -  Digital Artificial Intelligence Agent
 #    Copyright (C) 2023  Envedity
 #
 #    This program is free software: you can redistribute it and/or modify

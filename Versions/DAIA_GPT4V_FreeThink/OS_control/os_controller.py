@@ -1,4 +1,4 @@
-#    DAIA -  Digital Artificial Inteligence Agent
+#    DAIA -  Digital Artificial Intelligence Agent
 #    Copyright (C) 2023  Envedity
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -28,10 +28,10 @@ class OSController:
         self.y = pyautogui.position()[1]
 
     def click(self, x, y):
-        pyautogui.click(x, y)
+        pyautogui.click(int(x), int(y))
 
     def move_cursor_to(self, x, y):
-        pyautogui.moveTo(x, y, duration=0.2)
+        pyautogui.moveTo(int(x), int(y), duration=0.2)
 
     def keyboard(self, string):
         pyautogui.typewrite(string)

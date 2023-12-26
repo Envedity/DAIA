@@ -14,13 +14,32 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from pathlib import Path
-import os
+import sys
+import time
 
 
-def setup():
-    paths = [Path("DAIA/Screenshots")]
+class ProgressIndicator:
+    def __init__(self, prefix="Thinking", suffix="Complete"):
+        self.prefix = prefix
+        self.suffix = suffix
+        self.start_time = time.time()
 
-    for path in paths:
-        if not path.exists():
-            os.mkdir(path)
+    def update(self, iteration):
+        progress_indicator = self.get_spinner(iteration)
+
+        sys.stdout.write("\r%s %s" % (self.prefix, progress_indicator))
+        sys.stdout.flush()
+
+    def get_spinner(self, iteration):
+        spinners = ["-", "\\", "|", "/"]
+        return spinners[iteration % len(spinners)]
+
+
+total_iterations = 100
+progress_indicator = ProgressIndicator(prefix="Thinking", suffix="Complete")
+
+for i in range(total_iterations + 1):
+    time.sleep(0.1)
+    progress_indicator.update(i)
+
+sys.stdout.flush()

@@ -1,4 +1,4 @@
-#    DAIA -  Digital Artificial Inteligence Agent
+#    DAIA -  Digital Artificial Intelligence Agent
 #    Copyright (C) 2023  Envedity
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -14,7 +14,7 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from DAIA_GPT4V.Thinker.thinking import Think
+from Versions.DAIA_GPT4V_PreProgrammed.Thinker.thinking import Think
 from openai import OpenAI
 
 
