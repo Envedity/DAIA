@@ -48,13 +48,13 @@ Furthermore, the DAIA will be built with a built-in memory, self-evaluating and 
 
 ## 4. Versions ✨️
 
-### DAIA-PreProgrammed
+- ### DAIA-PreProgrammed
 This version of DAIA is pre-programmed with a set of prompts and processes that it will follow in its programmed order. Therefore this version is much more complex.
 
 Here is our current blueprint for the pre-programmed DAIA and its features:
 ![DAIA_preprogrammed_blueprint](Versions/DAIA_GPT4V_PreProgrammed/Design/DAIA%20(GPT%20Vision).png)
 
-### DAIA-FreeThink
+- ### DAIA-FreeThink
 This version of DAIA is much more free to complete the goals you give it in its own way, kind of like ChatGPT, but if it had vision and the ability to interact with your computer. Therefore it is much simpler in its design however, it can still scale if possible. (memory, optimization and a functional vision system coming soon)
 
 Here is our current blueprint for the free think DAIA and its features:
@@ -67,13 +67,13 @@ Here is our current blueprint for the free think DAIA and its features:
 3. Run the DAIA.py file by typing `python DAIA.py` in the DAIA directory.
 4. Choose a version of the DAIA you want to use:
 
-#### DAIA-PreProgrammed version:
+- #### DAIA-PreProgrammed version:
 1. Choose `DAIA_GPT4V-PreProgrammed` by typing `1` in the prompt.
 2. Give it a goal.
 3. Let it know if you agree with what it suggests for goal completion.
 4. Sit back and let the DAIA complete your goal all by itself
 
-#### DAIA-FreeThink version (as of now):
+- #### DAIA-FreeThink version (as of now):
 1. Choose `DAIA_GPT4V-FreeThink` by typing `2` in the prompt.
 2. Give it a goal, or other request you want it to do.
 3. Wait for its response and respond, you can stop when you think your goal is completed.
