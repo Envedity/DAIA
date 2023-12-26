@@ -1,4 +1,4 @@
-#    DAIA -  Digital Artificial Inteligence Agent
+#    DAIA -  Digital Artificial Intelligence Agent
 #    Copyright (C) 2023  Envedity
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -14,7 +14,8 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from DAIA_GPT4V.run import run
+from Versions.DAIA_GPT4V_PreProgrammed.run import run
+from Versions.DAIA_GPT4V_FreeThink.run import run_f
 from config import openai_api_key
 
 
@@ -37,7 +38,7 @@ def main(key: str = None) -> None:
     try:
         option = int(
             input(
-                "\nOptions\n[1] DAIA_GPT-4-with-Vision\n[2] DAIA_Continues\n\nSelect Option: "
+                "\nVersions:\n[1] DAIA_GPT-4-with-Vision-PreProgramed (Pre-Program DAIA's thinking, based on human thinking)\n[2] DAIA_GPT-4-with-Vision-FreeThink (Let the DAIA think on its own)\n\nSelect DAIA Version: "
             )
         )
 
@@ -50,7 +51,7 @@ def main(key: str = None) -> None:
             return run(api_key=key)
 
         case 2:
-            return print("Currently Unavaiable.")
+            return run_f(api_key=key)
 
         case _:
             return print("Invalid Option.")
