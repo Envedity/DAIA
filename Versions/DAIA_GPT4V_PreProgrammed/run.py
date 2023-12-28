@@ -130,9 +130,13 @@ Here is why I don't agree with them:
                         corrected_suggestions_response.choices[0].message.content
                     )
 
-                    is_suggestions = think.explanation_is_suggestions(corrected_suggestions_response)
+                    is_suggestions = think.explanation_is_suggestions(
+                        corrected_suggestions_response
+                    )
                     if not is_suggestions:
-                        suggestions = think.explanation_to_suggestions(corrected_suggestions_response, prev_data=False)
+                        suggestions = think.explanation_to_suggestions(
+                            corrected_suggestions_response, prev_data=False
+                        )
                     else:
                         suggestions = corrected_suggestions_response
                     print(
@@ -175,9 +179,13 @@ Here is why I don't agree with them:
                         corrected_suggestions_response.choices[0].message.content
                     )
 
-                    is_suggestions = think.explanation_is_suggestions(corrected_suggestions_response)
+                    is_suggestions = think.explanation_is_suggestions(
+                        corrected_suggestions_response
+                    )
                     if not is_suggestions:
-                        suggestions = think.explanation_to_suggestions(corrected_suggestions_response, prev_data=False)
+                        suggestions = think.explanation_to_suggestions(
+                            corrected_suggestions_response, prev_data=False
+                        )
                     else:
                         suggestions = corrected_suggestions_response
                     print(

@@ -25,6 +25,8 @@ from pathlib import Path
 from random import randint
 
 print
+
+
 class Think:
     """
     The main class for operations involving the GPT for the DAIA
@@ -428,15 +430,15 @@ General '{explanation}' steps:
         return suggestions
 
     def explanation_is_suggestions(self, explanation):
-        '''
+        """
         Is the explanation already made out of suggestions?
-        
+
         For example:
         If explanation = "1. Go to the website, 2. Download the app, 3. Install it ....", then explanation_is_suggestion = true
         If explanation = "You need to go to the website than download and install the app....", then explanation_is_suggestion = false
-        '''
-        
-        prompt = f'''
+        """
+
+        prompt = f"""
 Given the explanation string, determine if it is composed of suggestions or not.
 Consider an explanation to be a suggestion if it follows the format of numbered steps starting with digits followed by a period, e.g., "1. Do something, 2. Do another thing, 3. Complete the process."
 
@@ -444,7 +446,7 @@ explanatin string = {explanation}
 
 If the explanation string is a suggestion (or made out of suggestions) then type "is_suggestion"
 If the explanation string is NOT a suggestion (or made out of suggestions) then type "not_suggestion"
-'''
+"""
         is_suggestions = self.client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -455,13 +457,13 @@ If the explanation string is NOT a suggestion (or made out of suggestions) then 
             ],
         )
         is_suggestions = is_suggestions.choices[0].message.content
-        
+
         if is_suggestions.lower() == "is_suggestion":
             return True
-        
+
         if is_suggestions.lower() == "not_suggestion":
             return False
-    
+
     def short_remember(self, need: str):
         """
         Remember a short period of history in detail from the DAIA MemoryDB,
