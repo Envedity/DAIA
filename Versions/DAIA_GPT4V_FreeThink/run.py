@@ -15,13 +15,10 @@
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from openai import OpenAI
-from Versions.DAIA_GPT4V_FreeThink.Interpreter.interpreter import Interpreter
-from utils.setup import setup
+from Versions.DAIA_GPT4V_FreeThink.Components.Interpreter.interpreter import Interpreter
 
 
 def run_f(api_key):
-    setup()
-
     interpreter = Interpreter(api_key)
     client = OpenAI(
         api_key=api_key,

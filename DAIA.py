@@ -17,6 +17,7 @@
 from Versions.DAIA_GPT4V_PreProgrammed.run import run
 from Versions.DAIA_GPT4V_FreeThink.run import run_f
 from config import openai_api_key
+from utils.setup import setup
 
 
 def main(key: str = None) -> None:
@@ -33,6 +34,8 @@ def main(key: str = None) -> None:
             env_file.close()
 
         key = input_api_key
+
+    setup()
 
     # User Interaction
     try:

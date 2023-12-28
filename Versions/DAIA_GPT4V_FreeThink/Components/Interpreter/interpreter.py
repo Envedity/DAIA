@@ -15,8 +15,10 @@
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from openai import OpenAI
-from Versions.DAIA_GPT4V_FreeThink.OS_control.os_controller import OSController
-from Versions.DAIA_GPT4V_FreeThink.DVAI.GPT_4_with_Vision import DVAI
+from Versions.DAIA_GPT4V_FreeThink.Components.OS_control.os_controller import (
+    OSController,
+)
+from Versions.DAIA_GPT4V_FreeThink.Components.DVAI.GPT_4_with_Vision import DVAI
 from pathlib import Path
 from random import randint
 from selenium import webdriver
@@ -93,13 +95,20 @@ class Interpreter:
                     )
                     continue
 
-            # If there is only one parameter to the command, then convert the parameter to a string
+            # If there is only one parameter to the command, then convert the parameter to a string and don't include the *
             if len(params) == 1:
                 params = params[0]
+                if command_name in self.commands:
+                    command_function = self.commands[command_name]
+                    command_return = command_function(params)
+                    command_returns.append(
+                        f"{command_name} command return: {command_return}"
+                    )
+                    continue
 
             if command_name in self.commands:
                 command_function = self.commands[command_name]
-                command_return = command_function(params)
+                command_return = command_function(*params)
                 command_returns.append(
                     f"{command_name} command return: {command_return}"
                 )
@@ -130,7 +139,7 @@ class Interpreter:
         """
 
         writedown_file = Path(
-            f"DAIA/Versions/DAIA_GPT4V_Free/Memory/Writedown_files/{identifier_title}.txt"
+            f"Versions/DAIA_GPT4V_Free/Memory/Writedown_files/{identifier_title}.txt"
         )
         writedown_file.write_text(string)
 
@@ -144,7 +153,7 @@ class Interpreter:
         """
 
         writedown_file = Path(
-            f"DAIA/Versions/DAIA_GPT4V_Free/Memory/Writedown_files/{identifier}.txt"
+            f"Versions/DAIA_GPT4V_Free/Memory/Writedown_files/{identifier}.txt"
         )
         # writedown_files = writedown_dir.glob('*.txt')
 
@@ -168,6 +177,10 @@ class Interpreter:
         browser = webdriver.Chrome(options=options)
 
         browser.get(website_url)
+        # Detach the browser to prevent automatic closing after function return
+        browser.execute_cdp_cmd(
+            "Browser.detachFromTarget", {"sessionId": browser.session_id}
+        )
 
         return f"Successfully visited {website_url} with Google Chrome"
 
@@ -203,6 +216,8 @@ class Interpreter:
             f"Where on the provided screenshot is {item}? Provide the location in x and y coordinates. For example: 500x 200y"
         )
         x_value, y_value = self.extract_coordinates(location)
+        if x_value == None or y_value == None:
+            return "Sorry, but we couldn't find the coordinates to your specified item"
 
         self.click(x_value, y_value)
 
@@ -225,6 +240,8 @@ class Interpreter:
             f"Where on the provided screenshot is {item}? Provide the location in x and y coordinates. For example: 500x 200y"
         )
         x_value, y_value = self.extract_coordinates(location)
+        if x_value == None or y_value == None:
+            return "Sorry, but we couldn't find the coordinates to your specified item"
 
         self.move_cursor_to(x_value, y_value)
 
@@ -241,7 +258,7 @@ class Interpreter:
         """
 
         screenshot_savepath = Path(
-            f'DAIA/Screenshots/screenshot{"".join([str(e + randint(1, 9)) for e in range(10)])}.png'
+            f'Screenshots/screenshot{"".join([str(e + randint(1, 9)) for e in range(10)])}.png'
         )
         self.os_controller.screenshot(screenshot_savepath)
 

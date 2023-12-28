@@ -14,15 +14,17 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from Versions.DAIA_GPT4V_PreProgrammed.Memory.memory import Memory
-from Versions.DAIA_GPT4V_PreProgrammed.OS_control.os_controller import OSController
-from Versions.DAIA_GPT4V_PreProgrammed.DVAI.GPT_4_with_Vision import DVAI
+from Versions.DAIA_GPT4V_PreProgrammed.Components.Memory.memory import Memory
+from Versions.DAIA_GPT4V_PreProgrammed.Components.OS_control.os_controller import (
+    OSController,
+)
+from Versions.DAIA_GPT4V_PreProgrammed.Components.DVAI.GPT_4_with_Vision import DVAI
 from utils.setup import setup
 from openai import OpenAI
 from pathlib import Path
 from random import randint
 
-
+print
 class Think:
     """
     The main class for operations involving the GPT for the DAIA
@@ -42,9 +44,7 @@ class Think:
         Compleate goals
         """
 
-        setup()
-
-        # Setup system info and commands
+        # Setup system information and commands
         os_controller = OSController()
         system_info = os_controller.get_system_info()
         commands = [
@@ -59,11 +59,11 @@ class Think:
         for suggestion in first_suggestions:
             # Take a screenshot and save it
             screenshot_savepath = Path(
-                f'DAIA/Screenshots/screenshot{"".join([str(e + randint(1, 9)) for e in range(10)])}.png'
+                f'Screenshots/screenshot{"".join([str(e + randint(1, 9)) for e in range(10)])}.png'
             )
             os_controller.screenshot(screenshot_savepath)
 
-            # Get the current screen information with the screenshot (the prompt needs improvements)
+            # Get the current screen information with the screenshot (dev note: the prompt needs improvements)
             prompt = f"""
 Please state what is in the provided screenshot of the {str(system_info.get('OS'))} OS that relates to {suggestion} of the goal {self.goal}.
 """
@@ -427,6 +427,41 @@ General '{explanation}' steps:
 
         return suggestions
 
+    def explanation_is_suggestions(self, explanation):
+        '''
+        Is the explanation already made out of suggestions?
+        
+        For example:
+        If explanation = "1. Go to the website, 2. Download the app, 3. Install it ....", then explanation_is_suggestion = true
+        If explanation = "You need to go to the website than download and install the app....", then explanation_is_suggestion = false
+        '''
+        
+        prompt = f'''
+Given the explanation string, determine if it is composed of suggestions or not.
+Consider an explanation to be a suggestion if it follows the format of numbered steps starting with digits followed by a period, e.g., "1. Do something, 2. Do another thing, 3. Complete the process."
+
+explanatin string = {explanation}
+
+If the explanation string is a suggestion (or made out of suggestions) then type "is_suggestion"
+If the explanation string is NOT a suggestion (or made out of suggestions) then type "not_suggestion"
+'''
+        is_suggestions = self.client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+        )
+        is_suggestions = is_suggestions.choices[0].message.content
+        
+        if is_suggestions.lower() == "is_suggestion":
+            return True
+        
+        if is_suggestions.lower() == "not_suggestion":
+            return False
+    
     def short_remember(self, need: str):
         """
         Remember a short period of history in detail from the DAIA MemoryDB,

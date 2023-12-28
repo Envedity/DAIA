@@ -19,7 +19,7 @@ import os
 
 
 def setup():
-    paths = [Path("DAIA/Screenshots")]
+    paths = [Path("Screenshots")]
 
     for path in paths:
         if not path.exists():

@@ -14,7 +14,7 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from Versions.DAIA_GPT4V_PreProgrammed.Thinker.thinking import Think
+from Versions.DAIA_GPT4V_PreProgrammed.Components.Thinker.thinking import Think
 from openai import OpenAI
 
 
@@ -77,7 +77,11 @@ What would that question be? (respond only with the question)
     goal_help = goal_help.choices[0].message.content
     think.save_action(action1=question, action2=goal_help, category=0)
 
-    suggestions = think.explanation_to_suggestions(goal_help, prev_data=False)
+    is_suggestions = think.explanation_is_suggestions(goal_help)
+    if not is_suggestions:
+        suggestions = think.explanation_to_suggestions(goal_help, prev_data=False)
+    else:
+        suggestions = goal_help
     print(
         f"""
 General goal steps:
@@ -126,9 +130,11 @@ Here is why I don't agree with them:
                         corrected_suggestions_response.choices[0].message.content
                     )
 
-                    suggestions = think.explanation_to_suggestions(
-                        corrected_suggestions_response, prev_data=False
-                    )
+                    is_suggestions = think.explanation_is_suggestions(corrected_suggestions_response)
+                    if not is_suggestions:
+                        suggestions = think.explanation_to_suggestions(corrected_suggestions_response, prev_data=False)
+                    else:
+                        suggestions = corrected_suggestions_response
                     print(
                         f"""
 General goal steps:
@@ -169,9 +175,11 @@ Here is why I don't agree with them:
                         corrected_suggestions_response.choices[0].message.content
                     )
 
-                    suggestions = think.explanation_to_suggestions(
-                        corrected_suggestions_response, prev_data=False
-                    )
+                    is_suggestions = think.explanation_is_suggestions(corrected_suggestions_response)
+                    if not is_suggestions:
+                        suggestions = think.explanation_to_suggestions(corrected_suggestions_response, prev_data=False)
+                    else:
+                        suggestions = corrected_suggestions_response
                     print(
                         f"""
 General goal steps:
